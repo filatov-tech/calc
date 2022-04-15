@@ -1,7 +1,7 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ExpressionMember {
+class ExpressionMember {
 
     private static final Pattern ROMAN_NUMERALS = Pattern.compile("^[IVXLCDM]{1,}$");
 

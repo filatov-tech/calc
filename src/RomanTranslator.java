@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class RomanTranslator {
+class RomanTranslator {
     private static Map<String, Integer> romanNumerals = new HashMap<>();
     private static Map<Integer, String> arabicNumbers = new HashMap<>();
 

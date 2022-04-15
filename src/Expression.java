@@ -1,4 +1,4 @@
-public class Expression {
+class Expression {
     private ExpressionMember firstMember;
     private ExpressionMember secondMember;
     private String sign;
