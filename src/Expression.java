@@ -48,7 +48,7 @@ public class Expression {
                 this.sign = sign;
                 break;
             default:
-                throw new Exception("Sign have to be only arithmetic signs '+', '-', '*', or '/'");
+                throw new Exception("The sign must be only an arithmetic sign '+', '-', '*', or '/'");
         }
     }
 

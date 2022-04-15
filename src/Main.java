@@ -1,12 +1,8 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.regex.Pattern;
 
 public class Main {
-    public static final Pattern ROMAN_CHECK = Pattern.compile("");
-
-
     public static void main(String[] args) throws Exception {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             while (true) {
@@ -22,11 +18,11 @@ public class Main {
     }
 
     public static String calc(String input) throws Exception {
-        String[] expressionArray = input.split(" ");
-        if (expressionArray.length != 3) {
+        String[] expressionElements = input.split(" ");
+        if (expressionElements.length != 3) {
             throw new Exception("Invalid format of operation: must be only 2 operands and 1 operator (+, -, /, *)");
         }
-        Expression expression = new Expression(expressionArray[0], expressionArray[1], expressionArray[2]);
+        Expression expression = new Expression(expressionElements[0], expressionElements[1], expressionElements[2]);
         return expression.calculate();
     }
 }
