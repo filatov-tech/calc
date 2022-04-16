@@ -27,21 +27,28 @@ class RomanTranslator {
         arabicNumbers.put(8, "VIII");
         arabicNumbers.put(9, "IX");
         arabicNumbers.put(10, "X");
-        arabicNumbers.put(11, "XI");
-        arabicNumbers.put(12, "XII");
-        arabicNumbers.put(13, "XIII");
-        arabicNumbers.put(14, "XIV");
-        arabicNumbers.put(15, "XV");
-        arabicNumbers.put(16, "XVI");
-        arabicNumbers.put(17, "XVII");
-        arabicNumbers.put(18, "XVIII");
-        arabicNumbers.put(19, "XIX");
         arabicNumbers.put(20, "XX");
+        arabicNumbers.put(30, "XXX");
+        arabicNumbers.put(40, "XL");
+        arabicNumbers.put(50, "L");
+        arabicNumbers.put(60, "LX");
+        arabicNumbers.put(70, "LXX");
+        arabicNumbers.put(80, "LXXX");
+        arabicNumbers.put(90, "XC");
+        arabicNumbers.put(100, "C");
     }
 
 
     public static String convertToRoman(int arabicNumber) {
-        return arabicNumbers.get(arabicNumber);
+        StringBuilder result = new StringBuilder("");
+        for (int i = 100; i > 0; i /= 10) {
+            int index = (arabicNumber / i) * i;
+            if (index > 0) {
+                result.append(arabicNumbers.get(index));
+                arabicNumber -= (arabicNumber / i) * i;
+            }
+        }
+        return result.toString();
     }
 
     public static int convertToArabic(String romanNumber) {

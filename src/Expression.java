@@ -63,8 +63,8 @@ class Expression {
                 break;
             case ("-"):
                 result = firstMember - secondMember;
-                if (isRomanExpression && result < 0) {
-                    throw new Exception("Can't be calculated: there are no negative numbers in the roman numeral system");
+                if (isRomanExpression && result <= 0) {
+                    throw new Exception("Can't be calculated: there are no negative numbers or zero in the roman numeral system");
                 }
                 break;
             case ("*"):

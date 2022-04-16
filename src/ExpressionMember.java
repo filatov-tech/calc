@@ -9,13 +9,19 @@ class ExpressionMember {
 
     private int value;
 
-    public ExpressionMember(String value) {
+    public ExpressionMember(String value) throws Exception {
         Matcher matcher = ROMAN_NUMERALS.matcher(value);
         if (matcher.matches()) {
             this.isRoman = true;
             this.value = RomanTranslator.convertToArabic(value);
         } else {
-            this.value = Integer.parseInt(value);
+            int uncheckedValue = Integer.parseInt(value);
+            if (uncheckedValue > 0 && uncheckedValue <= 10) {
+                this.value = uncheckedValue;
+            } else {
+                throw new Exception("Expression terms must be between 1 and 10 inclusive");
+            }
+
         }
     }
 
